@@ -9,3 +9,30 @@ virtuelle machine :
   Debian 11
   root / 77HomeServeur++
   oli / 77Olipopotam++
+  Vlan 2 sur interface LAN 1 => 192.168.120.x
+  nano /etc/network/interfaces
+  iface ens3 inet static
+    address 192.168.120.61
+    gateway 192.168.120.1
+    netmask 255.255.255.0
+    dns-nameservers 192.168.120.1
+  systemctl restart networking.service
+  
+  apt-get install nginx
+  systemctl enable nginx
+  
+  apt-get install -y samba
+  systemctl enable smbd
+  nano /etc/samba/smb.conf
+    [webpartage]
+      comment = Site Web
+      path = /var/www/html
+      browseable = yes
+      guest = no
+      valid user = @webpartage
+      wrtieable = yes
+  systemctl restart smbd
+  sudo useradd webpartage
+  sudo smbpasswd -a webpartage / 77HomeServeur++
+  sudo groupadd webpartage
+  gpasswd -a webpartage webpartage
