@@ -1,0 +1,11 @@
+Mariadb :
+  on synology
+  root / 77HomeServeur++
+   port 3306
+PHP 7.4
+PHP 8
+phpMyAdmin
+virtuelle machine :
+  Debian 11
+  root / 77HomeServeur++
+  oli / 77Olipopotam++
