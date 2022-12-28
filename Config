@@ -36,3 +36,12 @@ virtuelle machine :
   sudo smbpasswd -a webpartage / 77HomeServeur++
   sudo groupadd webpartage
   gpasswd -a webpartage webpartage
+  
+  PHP:
+  sudo apt-get update
+  sudo apt-get install ca-certificates apt-transport-https software-properties-common wget curl lsb-release
+  curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x
+  sudo apt-get update
+  sudo apt-get install php8.1-fpm php8.1-cli
+  sudo apt-get install php8.1-common php8.1-curl php8.1-bcmath php8.1-intl php8.1-mbstring php8.1-xmlrpc php8.1-mcrypt php8.1-mysql php8.1-gd php8.1-xml php8.1-cli php8.1-zip
+  
